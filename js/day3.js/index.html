@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список задач</title>
+	<style>
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 10px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+    }
+    .task-text {
+        flex: 1; /* занимает всё свободное место */
+    }
+    .delete-btn {
+        color: #c00;
+        margin-left: 10px;
+        cursor: pointer;
+        font-size: 14px;
+        user-select: none; /* чтобы нельзя было выделить крестик мышкой */
+    }
+    .delete-btn:hover {
+        color: #f00;
+    }
+    .done .task-text {
+        text-decoration: line-through;
+        color: gray;
+    }
+</style>
+</head>
+<body>
+    <h1>Мои задачи</h1>
+    
+    <!-- Поле для ввода новой задачи -->
+    <input type="text" id="taskInput" placeholder="Что нужно сделать?">
+    
+    <!-- Кнопки управления -->
+    <button id="addBtn">Добавить</button>
+    <button id="clearBtn">Очистить всё</button>
+
+    <!-- Сюда будут добавляться задачи -->
+    <ul id="taskList"></ul>
+
+    <!-- Подключаем наш скрипт -->
+    <script src="app.js"></script>
+</body>
+</html>
